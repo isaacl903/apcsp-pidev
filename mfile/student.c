@@ -1,12 +1,7 @@
 #include <stdio.h>
 
-typedef struct {
+#include <student.h>
 
-	char firstname[100];
-	char lastname[100];
-	int age;
-	int id;
-} student;
 
 void printstud(student* stud)
 {
@@ -30,25 +25,3 @@ void enterstud(student* stu)
   scanf("%d", &(stu->id));
 }
 
-int main()
-{
-	char answer;
-  int counter;
-	printf("Enter a student?(y/n) ");
-	scanf("%c", &answer);
-	counter = 0;
-	student students[100];
-
-	while (answer == 'y')
-	{
-		enterstud(&students[counter]);
-    counter++;
-    printf("Enter a student?(y/n) ");
-	  scanf(" %c", &answer);
-	}
-
-  for (int i = 0; i < counter; i++)
-  {
-    printstud(&students[i]);
-  }
-}
